@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Am Sorry - Forgiveness Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-flowers">
+        <span class="flower">🌸</span>
+        <span class="flower">🌼</span>
+        <span class="flower">🌷</span>
+        <span class="flower">🌹</span>
+        <span class="flower">🌺</span>
+    </div>
+
+    <main class="container">
+        <!-- Main Message Section -->
+        <section class="message-section">
+            <h1 class="main-message">I am sorry</h1>
+            <p class="question">Is Kritika forgiven?</p>
+        </section>
+
+        <!-- Answer Buttons -->
+        <section class="buttons-section">
+            <button class="answer-btn yes-btn" onclick="handleAnswer('Yes')">Yes</button>
+            <button class="answer-btn hell-yeah-btn" onclick="handleAnswer('Hell yea')">Hell yea</button>
+            <button class="answer-btn best-btn" onclick="handleAnswer('Ofc Kritika is the best')">Ofc Kritika is the best</button>
+        </section>
+
+        <!-- Random Quote Display -->
+        <section class="quote-section">
+            <p class="quote-text" id="quoteDisplay"></p>
+        </section>
+
+        <!-- Compliments Box -->
+        <section class="compliments-section">
+            <label for="complimentInput" class="compliment-label">For additional compliments:</label>
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    id="complimentInput" 
+                    class="compliment-input" 
+                    placeholder="Type your sweet words here..."
+                    onkeypress="handleComplimentKeypress(event)"
+                >
+                <button class="send-btn" onclick="addCompliment()">Send 💌</button>
+            </div>
+            <div class="compliments-list" id="complimentsList"></div>
+        </section>
+
+        <!-- Bouquet Creator Section -->
+        <section class="bouquet-section">
+            <h2 class="bouquet-title">Create Your Own Bouquet</h2>
+            <div class="bouquet-container">
+                <div class="flower-palette">
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌸">🌸</div>
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌼">🌼</div>
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌷">🌷</div>
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌹">🌹</div>
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌺">🌺</div>
+                    <div class="flower-item" draggable="true" ondragstart="dragStart(event)" data-flower="🌻">🌻</div>
+                </div>
+                <div 
+                    class="bouquet-drop-zone" 
+                    ondrop="dropFlower(event)" 
+                    ondragover="allowDrop(event)"
+                    id="bouquetZone"
+                >
+                    <p class="drop-hint">Drag flowers here to create your bouquet</p>
+                </div>
+            </div>
+            <button class="clear-bouquet-btn" onclick="clearBouquet()">Clear Bouquet</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
